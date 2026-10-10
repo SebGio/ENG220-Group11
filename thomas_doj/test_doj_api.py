@@ -7,8 +7,8 @@ import requests
 url = "https://www.justice.gov/api/v1/press_releases.json"
 
 # Store both collected articles and the next page to request.
-progress_file = Path("nm_collection_progress.json")
-pages_per_run = 100
+progress_file = Path(__file__).resolve().parent / "nm_collection_progress.json"
+pages_per_run = 200
 
 if progress_file.exists():
     with progress_file.open("r", encoding="utf-8") as file:
